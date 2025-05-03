@@ -1,5 +1,6 @@
 #include "../include/menu.h"
 
+// Função que mostra as regras do jogo
 void rules(int *game_status) {
   printf("\n*** SUPER TRUNFO ***\n\n");
 
@@ -26,7 +27,10 @@ void rules(int *game_status) {
   getchar();
 }
 
+// Função que mostra o menu sempre que o usuário interage
 void show_options(int *game_status) {
+  // Essa condição só é atendida quando o programa é inicializado pela primeira
+  // vez, é quando o valor inicial da variavel é zero.
   if (*game_status == 0) {
     printf("\n|| Começar (1) || Regras do jogo (2) || Sair (3) ||\n");
   } else {
@@ -34,6 +38,7 @@ void show_options(int *game_status) {
   }
 }
 
+// Função que mostra e controla o menu do game e a anicialização do jogo
 void show_main_menu(int *game_status) {
   // Baseado no valor do game_status o menu gerencia as opções disponiveis para
   // o usuário. Foi usada aqui o point para a variavel game_status para o
