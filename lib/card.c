@@ -1,7 +1,17 @@
 #include "../include/card.h"
 
+// Imprime as propriedades dos cards;
 void calling_cards(Card card) {
-  // TODO: Printar as informações dos CARDS
+  printf("\nEstado: %s\n", card.state);
+  printf("Code: %5s\n", card.code);
+  printf("Cidade: %s\n", card.city);
+  printf("População: %ld pessoas\n", card.population);
+  printf("Área: %.2f km²\n", card.area);
+  printf("PIB: %.2f\n", card.pib);
+  printf("Números de Pontos Turísticos: %i\n", card.turist_point);
+  printf("Densidade Populacional: %.2f\n", card.density);
+  printf("PIB per Capita: %.8f\n", card.gpd);
+  printf("Super Power: %.2f\n", card.super_power);
 }
 
 float calc_super_power(Card card) {
