@@ -1,5 +1,4 @@
 #include "../include/menu.h"
-#include <stdio.h>
 
 void rules(int *game_status) {
   printf("\n*** SUPER TRUNFO ***\n\n");
