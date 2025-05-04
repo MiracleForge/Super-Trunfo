@@ -50,3 +50,12 @@ gcc -o  supertrunfo CartasSuperTrunfo.c
 # Mehorias
 Proteção contra inserção de tipos incorretos, poderia otimizar assegurando que o tipo incorreto inserido pelo usuário não quere o fluxo do game
 ```
+
+## Ambiente de Desenvolvimento
+
+- **Mason.nvim**: gerenciador de pacotes usado para instalar servidores de linguagem e ferramentas como:
+- `clangd` (autocompletar e navegação)
+- `clang-format` (formatação automática de código)
+- **Autocompletion** com `nvim-cmp` + `LSP`
+- **Formatação automática** com `null-ls` e `clang-format`
+- **Organização modular** do código com headers e bibliotecas separadas
