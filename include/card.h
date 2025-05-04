@@ -1,6 +1,5 @@
 #include "../include/constants.h"
 #include <stdio.h>
-
 typedef struct Card {
   char state[50];
   char city[50];

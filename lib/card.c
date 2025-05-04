@@ -1,5 +1,60 @@
 #include "../include/card.h"
 
+int compare_selected_attribute(int *selected_attributes, Card deck[]) {
+  int count = 0;
+  int score[2] = {0, 0}; // score[0] para Player 0, score[1] para Player 1
+
+  while (count < NUM_CARDS) {
+    int winner = -1;
+    printf("Comparando %s atributo selecionado:\n",
+           count == 0 ? "primeiro" : "segundo");
+
+    switch (selected_attributes[count]) {
+    case 0:
+      winner = (deck[0].population > deck[1].population) ? 0 : 1;
+      printf("População - jogador %d venceu.\n", winner);
+      break;
+    case 1:
+      winner = (deck[0].area > deck[1].area) ? 0 : 1;
+      printf("Área - jogador %d venceu.\n", winner);
+      break;
+    case 2:
+      winner = (deck[0].pib > deck[1].pib) ? 0 : 1;
+      printf("PIB - jogador %d venceu.\n", winner);
+      break;
+    case 3:
+      winner = (deck[0].turist_point > deck[1].turist_point) ? 0 : 1;
+      printf("Pontos Turísticos - jogador %d venceu.\n", winner);
+      break;
+    case 4:
+      winner = (deck[0].density < deck[1].density) ? 0 : 1; // menor vence
+      printf("Densidade Populacional - jogador %d venceu.\n", winner);
+      break;
+    case 5:
+      winner = (deck[0].gpd > deck[1].gpd) ? 0 : 1;
+      printf("PIB per Capita - jogador %d venceu.\n", winner);
+      break;
+    case 6:
+      winner = (deck[0].super_power > deck[1].super_power) ? 0 : 1;
+      printf("Super Poder - jogador %d venceu.\n", winner);
+      break;
+    }
+
+    if (winner != -1) {
+      score[winner]++;
+    }
+    count++;
+  }
+
+  // Decide o vencedor final
+  if (score[0] > score[1])
+    return 0;
+  else if (score[1] > score[0])
+    return 1;
+  else
+    return -1; // empate
+}
+
 // Imprime as propriedades dos cards;
 void calling_cards(Card card) {
   printf("\nEstado: %s\n", card.state);

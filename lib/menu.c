@@ -71,3 +71,28 @@ void show_main_menu(int *game_status) {
     }
   }
 }
+
+void get_attribute_menu(int *selected_attributes) {
+  int input;
+  int count = 0;
+
+  while (count < 2) {
+    printf("\nEscolha um atributo para comparação (%d/2):\n", count + 1);
+    printf("0. População\n");
+    printf("1. Área\n");
+    printf("2. PIB\n");
+    printf("3. Pontos Turísticos\n");
+    printf("4. Densidade Populacional\n");
+    printf("5. PIB per Capita\n");
+    printf("6. Super Power\n");
+    printf("Escolha (0-6): ");
+    scanf("%d", &input);
+
+    if (input >= 0 && input <= 6) {
+      selected_attributes[count] = input;
+      count++;
+    } else {
+      printf("Opção inválida. Tente novamente.\n");
+    }
+  }
+}
